@@ -26,7 +26,7 @@ config :chatter, ChatterWeb.Endpoint,
 config :logger, level: :info
 
   # Configure your database
-  config :test_app, TestApp.Repo,
+  config :chatter, Chatter.Repo,
     adapter: Ecto.Adapters.Postgres,
     hostname: System.get_env("NEW_DATABASE_URL"),
     pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),

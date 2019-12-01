@@ -20,7 +20,7 @@ defmodule ChatterWeb.ChatRoomChannel do
 
 # handle info after joining channel
   def handle_info(:after_join, socket) do
-    Chatter.Message.recent_messages()
+    Chatter.Message.recent_messages_by_room(1)
     |> Enum.each(fn msg -> push(socket, "new_message", format_msg(msg)) end)
     {:noreply, socket}
   end

@@ -5,7 +5,7 @@ defmodule Chatter.Repo.Migrations.CreateMessages do
     create table(:messages) do
       add :name, :string
       add :message, :string
-
+      add :chat_room_id, references(:chat_rooms)
       timestamps()
     end
 
